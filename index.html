@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArchiveSorter — Privacy Policy</title>
+  <style>
+    :root {
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --accent: #0066cc;
+      --bg: #ffffff;
+      --border: #e5e5ea;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f5f5f7;
+        --muted: #a1a1a6;
+        --accent: #64a8ff;
+        --bg: #1d1d1f;
+        --border: #38383a;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Helvetica Neue", Arial, sans-serif;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 1.25rem;
+      margin-top: 2.25rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    p { margin: 0.75rem 0; }
+    ul { padding-left: 1.25rem; }
+    li { margin: 0.35rem 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .highlight {
+      background: var(--border);
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .lang-switch {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .lang-switch button {
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .lang-switch button.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .lang { display: none; }
+    .lang.active { display: block; }
+  </style>
+</head>
+<body>
+
+  <div class="lang-switch">
+    <button onclick="setLang('en')" id="btn-en" class="active">English</button>
+    <button onclick="setLang('de')" id="btn-de">Deutsch</button>
+    <button onclick="setLang('fr')" id="btn-fr">Fran&ccedil;ais</button>
+  </div>
+
+  <!-- ==================== ENGLISH ==================== -->
+  <div class="lang active" id="lang-en">
+    <h1>Privacy Policy</h1>
+    <section aria-labelledby="v2-en">
+      <h2 id="v2-en">Version 2.0 and later</h2>
+      <h3>No Collection by the Developer</h3>
+      <p>The developer operates no backend for ArchiveSorter and receives no documents, recognized text, or usage data. No account is required. The app contains no advertising, analytics, or tracking.</p>
+      <h3>Processing on Your Device</h3>
+      <p>Text recognition (OvisOCR2), classification, summaries, and document-based answers (Qwen 3.5 4B) run entirely on your device. Documents, recognized text, and questions never leave the device for this – unless you explicitly connect your own model server (see below).</p>
+      <p>The on-device models require an iPhone or iPad with at least 6 GB of RAM. Version 2.0 does not use Apple Foundation Models. If a document has more than five pages, the app skips AI reading and classification. You choose its folder yourself. This limit also applies when you use your own model server.</p>
+      <h3>Model Downloads</h3>
+      <p>Only after your explicit action does Apple deliver the immutable model packs OvisOCR2 and Qwen 3.5 4B as Apple-hosted Background Assets. Only model weights, tokenizers, configurations, and license and attribution files are downloaded; no documents or text are transferred. Apple's privacy terms and your carrier's terms apply to the download's network metadata.</p>
+      <h3>Device Library</h3>
+      <p>A device library lives in the folder you choose on this device or on a connected drive. The folder contains the filed documents as PDF, the unchanged originals, and the recognized text. The metadata database (type, folder, issuer, date, amounts, tags, summaries, household assignment), the processing and change journals, deletion markers, and the history of your questions live in this device's private app storage; the folder alone is therefore not a complete backup – use the Backup function in Settings for that; a backup also contains the history of your questions. The app creates backups and exports in the folder you choose for them; if that folder is in a cloud folder, that provider's rules apply; this is not collection by the developer.</p>
+      <h3>Cloud Library (Sync Between Your Devices)</h3>
+      <p>If you choose a folder in iCloud Drive, at another provider integrated through the system, or on a network share, ArchiveSorter creates a cloud library there or joins an existing one. Each device keeps its own private working copy and writes to the chosen folder: change files with the documents' metadata (type, folder, issuer, date, amounts, tags, summaries, household assignment, file name and filing path, trash and deletion state), the originals, the filed PDFs, the recognized text, small preview images of the first page, document texts prepared for “Ask”, the categories, the names of the people in your household, the device name you chose, a copy of the library database, and a lock file with the app identifier and a device identifier. Other devices with access to this folder read and show this data. With a mirror (“Library with mirror”) the app also keeps a readable copy of the filed PDFs in a folder you choose. Transfer and storage are handled by the folder's provider (for example Apple for iCloud Drive) under its terms; the developer receives nothing. The history of your questions is not synced.</p>
+      <h3>Your Own Model Server (Optional)</h3>
+      <p>In Settings you can connect your own server in your local network (LM Studio, Ollama, or an OpenAI-compatible server); only addresses in the local network are accepted. Before activation the app sends only fixed test requests without document data; an optional API key is stored in this device's keychain. Once you confirm the server with “Use these models”, ArchiveSorter sends page images, recognized text, and your questions to this server for processing. What happens to them there is decided by the server's operator; the developer receives nothing.</p>
+      <h3>Local to This Device Only</h3>
+      <p>The private app container keeps settings, the search index, and preview images. Model packs live in Apple's managed, read-only asset storage. For the system search (Spotlight), the type, issuer, date, folder, summary, and tags of filed documents are kept in this device's search index; page text is not stored there.</p>
+      <h3>Deletion</h3>
+      <p>The trash keeps metadata and search state for restoration. Permanent deletion removes the filed copy, the original, the recognized text, and the index entries; a deletion marker remains in private app storage so that a backup of this device does not restore the document unintentionally.</p>
+      <h3>Contact</h3>
+      <p>Sebastian Schreck<br><a href="mailto:developer.schreck@icloud.com">developer.schreck@icloud.com</a><br>Nürtinger Straße 52, 71032 Böblingen, Germany</p>
+    </section>
+
+    <h2 id="v1-en">Version 1.0</h2>
+    <div class="meta">ArchiveSorter &middot; Last updated: August 26, 2026</div>
+
+    <div class="highlight">
+      <strong>In short:</strong> The Developer operates no backend and does not
+      collect your documents, extracted text, or app usage. OCR and AI inference
+      in the shipping app run on your device. If you choose a File Provider
+      folder, that provider may upload and synchronize the shared library data
+      described below under its own terms.
+    </div>
+
+    <h2>1. Who We Are</h2>
+    <p>ArchiveSorter is developed and maintained by:</p>
+    <p>
+      Sebastian Schreck<br>
+      Nürtinger Straße 52<br>
+      71032 Böblingen<br>
+      Germany<br>
+      Phone: <a href="tel:+491623853102">+49 162 3853102</a><br>
+      Email: <a href="mailto:developer.schreck@icloud.com">developer.schreck@icloud.com</a>
+    </p>
+
+    <h2>2. Data Collected by the Developer</h2>
+    <p>
+      <strong>None by the Developer.</strong> ArchiveSorter does not collect, log,
+      transmit, or store any personal data, usage data, analytics,
+      crash reports, advertising identifiers, or device identifiers
+      on any server operated by the Developer.
+    </p>
+    <p>The Developer does not operate any backend service for this app.</p>
+
+    <h2>3. On-Device Processing</h2>
+    <p>
+      OvisOCR2 transcribes complete document pages. Qwen3.5 4B then processes
+      the complete recognized text for classification, summaries, filing, and
+      document-based answers. In the shipping app, OCR and AI inference run on
+      your device through native MLX models. Apple Foundation Models is used
+      locally only where the feature and context allow it.
+    </p>
+    <p>
+      The Developer does not receive your documents or extracted text. Storage
+      and synchronization by a File Provider you select are described separately
+      below.
+    </p>
+
+    <h2>4. Model Downloads and User-Chosen File Providers</h2>
+    <p><strong>4.1 Hugging Face Model Downloads</strong></p>
+    <p>
+      After you explicitly start the downloads, ArchiveSorter fetches the weights
+      and required supporting files for OvisOCR2 and Qwen3.5 from the Hugging Face
+      Hub (<a href="https://huggingface.co">huggingface.co</a>). The app does not
+      add document content or app-usage analytics to those requests. Standard
+      network metadata such as your IP address and HTTP headers is processed to
+      deliver the files. Hugging Face&rsquo;s and network providers&rsquo; own privacy and
+      retention terms apply to that metadata.
+    </p>
+    <p><strong>4.2 File Provider Library Folders</strong></p>
+    <p>
+      If you select a folder supplied by iCloud Drive, Dropbox, OneDrive, Google
+      Drive, or another File Provider, that provider may upload and synchronize:
+    </p>
+    <ul>
+      <li>document files and exact original backups;</li>
+      <li>complete OCR text in plaintext sidecars;</li>
+      <li>temporary Input, processing, and deletion-staging files; and</li>
+      <li>checksum-protected recovery and synchronization records.</li>
+    </ul>
+    <p>
+      Recovery records can contain filenames and relative paths; classification
+      and organization; document dates, types, and kinds; insurance, financial,
+      and recipient fields; tags; review, trash, and processing state; generated
+      summaries, topics, actions, entities, and snippets; hashes, timestamps, and
+      file evidence; immutable revision history; transaction journals; and
+      deletion tombstones. The selected provider&rsquo;s privacy, retention, Recently
+      Deleted, and file-versioning rules apply. Provider synchronization is
+      separate from Developer collection.
+    </p>
+
+    <h2>5. Permissions the App Requests</h2>
+    <ul>
+      <li><strong>Camera</strong> &mdash; only when you scan a document
+        using the in-app document scanner. Captured images are
+        processed on-device and stored only in the folder you
+        selected as your library.</li>
+      <li><strong>Face ID / Touch ID</strong> &mdash; only to unlock
+        the app, if you enable App Lock. Biometric data is handled
+        by iOS and never seen by the app or the Developer.</li>
+      <li><strong>File access</strong> &mdash; the app reads and writes
+        the library folder you explicitly select and files you import or share.</li>
+    </ul>
+
+    <h2>6. Data Storage and Deletion</h2>
+    <p>
+      Device-local data stays inside each device&rsquo;s private app container. The
+      live SwiftData database, FTS/AgenticSearch database, search chunks and
+      embeddings, thumbnails, conflict copies, and update or recovery database
+      snapshots reside in Application Support; downloaded model artifacts reside
+      in Caches; and preferences/settings reside in UserDefaults/Preferences. A
+      legacy .database folder in a library may remain only as a cold hand-off
+      copy; it is not the live index.
+    </p>
+    <p>
+      Soft Delete retains metadata and search state for restoration. Permanent
+      Delete removes the app-managed document copy, matching original backup,
+      plaintext OCR sidecar, and local database projection. The app also attempts
+      best-effort cleanup of matching device-local thumbnail cache entries; a
+      cache I/O failure does not weaken the committed removal of core bytes and
+      projection. The recovery manifest, immutable revision history, transaction
+      journals, and deletion tombstone remain in the selected library so another
+      device does not restore the document. A File Provider may retain its own
+      copies under its retention, trash, or versioning rules. Deleting the app
+      removes its local container but does not by itself delete a library held by
+      a File Provider.
+    </p>
+
+    <h2>7. Children&rsquo;s Privacy</h2>
+    <p>
+      ArchiveSorter is not directed at children under 13. The Developer does not
+      knowingly collect data from children or any other users. A File Provider
+      you select processes the shared library data described above under its own
+      terms.
+    </p>
+
+    <h2>8. Third-Party Services</h2>
+    <p>
+      The app does not include any third-party analytics, advertising,
+      crash reporting, or tracking SDKs. Hugging Face is contacted only after
+      you start a model download. A File Provider is involved only when you
+      choose a folder it supplies.
+    </p>
+
+    <h2>9. Your Rights</h2>
+    <p>
+      Because the Developer does not collect or store any personal
+      data about you, there is no personal data to access, rectify,
+      delete, or port. You retain control of the data in the app, its local
+      containers, and your chosen library or storage provider, subject to that
+      provider&rsquo;s retention and versioning rules.
+    </p>
+
+    <h2>10. Changes to This Policy</h2>
+    <p>
+      If this policy changes, the &ldquo;Last updated&rdquo; date at
+      the top of this page will reflect the change. Please check
+      back occasionally.
+    </p>
+
+    <h2>11. Contact</h2>
+    <p>
+      If you have any questions about this Privacy Policy or the
+      app&rsquo;s privacy practices, please contact:
+    </p>
+    <p>
+      Sebastian Schreck<br>
+      Nürtinger Straße 52<br>
+      71032 Böblingen<br>
+      Germany<br>
+      Phone: <a href="tel:+491623853102">+49 162 3853102</a><br>
+      Email: <a href="mailto:developer.schreck@icloud.com">developer.schreck@icloud.com</a>
+    </p>
+
+    <p style="margin-top: 1.5rem;">
+      <a href="../archivesorter-support-v2/index.html?lang=en">Support &amp; FAQ</a>
+    </p>
+  </div>
+
+  <!-- ==================== DEUTSCH ==================== -->
+  <div class="lang" id="lang-de">
+    <h1>Datenschutzerkl&auml;rung</h1>
+    <section aria-labelledby="v2-de">
+      <h2 id="v2-de">Version 2.0 und neuer</h2>
+      <h3>Keine Erhebung durch den Entwickler</h3>
+      <p>Der Entwickler betreibt kein Backend für ArchiveSorter und empfängt keine Dokumente, erkannten Texte oder Nutzungsdaten. Es ist kein Konto erforderlich. Die App enthält keine Werbung, keine Analysefunktionen und kein Tracking.</p>
+      <h3>Verarbeitung auf deinem Gerät</h3>
+      <p>Texterkennung (OvisOCR2), Einordnung, Zusammenfassungen und dokumentbezogene Antworten (Qwen 3.5 4B) laufen vollständig auf deinem Gerät. Dokumente, erkannte Texte und Fragen verlassen das Gerät dafür nicht – es sei denn, du bindest ausdrücklich einen eigenen Modellserver an (siehe unten).</p>
+      <p>Für die Modelle auf dem Gerät brauchst du ein iPhone oder iPad mit mindestens 6 GB Arbeitsspeicher. Version 2.0 verwendet keine Apple Foundation Models. Bei Dokumenten mit mehr als fünf Seiten überspringt die App das Lesen und Einordnen durch die KI. Du wählst den Ordner selbst. Diese Grenze gilt auch beim Einsatz eines eigenen Modellservers.</p>
+      <h3>Modell-Downloads</h3>
+      <p>Apple lädt erst nach deiner ausdrücklichen Aktion die unveränderlichen Modellpakete OvisOCR2 und Qwen 3.5 4B als Apple-gehostete Background Assets. Dabei werden ausschließlich Modellgewichte, Tokenizer, Konfigurationen sowie Lizenz- und Attributionsdateien geladen; Dokumente oder Texte werden nicht übertragen. Für die Netzwerkmetadaten des Downloads gelten Apples Datenschutzbestimmungen und die Bedingungen deines Netzbetreibers.</p>
+      <h3>Gerätebibliothek</h3>
+      <p>Eine Gerätebibliothek liegt in dem von dir gewählten Ordner auf diesem Gerät oder einem angeschlossenen Laufwerk. Der Ordner enthält die abgelegten Dokumente als PDF, die unveränderten Originale und die erkannten Texte. Die Metadaten-Datenbank (Typ, Ordner, Aussteller, Datum, Beträge, Schlagwörter, Zusammenfassungen, Personenzuordnung), die Verarbeitungs- und Änderungsjournale sowie Löschmarkierungen und der Verlauf deiner Fragen liegen im privaten App-Speicher dieses Geräts; der Ordner allein ist deshalb keine vollständige Sicherung – dafür gibt es die Backup-Funktion in den Einstellungen; ein Backup enthält auch den Verlauf deiner Fragen. Sicherungskopien und Exporte legt die App in dem Ordner an, den du dafür auswählst; liegt dieser in einem Cloud-Ordner, gelten dafür die Regeln dieses Anbieters; das ist keine Erhebung durch den Entwickler.</p>
+      <h3>Cloud-Bibliothek (Abgleich zwischen deinen Geräten)</h3>
+      <p>Wählst du als Ort einen Ordner in iCloud Drive, bei einem anderen über das System eingebundenen Anbieter oder auf einer Netzwerkfreigabe, legt ArchiveSorter dort eine Cloud-Bibliothek an oder tritt einer vorhandenen bei. Jedes Gerät behält seine eigene private Arbeitskopie und schreibt in den gewählten Ordner: Änderungsdateien mit den Metadaten der Dokumente (Typ, Ordner, Aussteller, Datum, Beträge, Schlagwörter, Zusammenfassungen, Personenzuordnung, Dateiname und Ablagepfad, Papierkorb- und Löschstatus), die Originale, die abgelegten PDFs, die erkannten Texte, kleine Vorschaubilder der ersten Seite, für „Fragen“ aufbereitete Dokumenttexte, die Kategorien, die Namen der Personen deines Haushalts, den von dir gewählten Gerätenamen, eine Kopie der Bibliotheksdatenbank sowie eine Sperrdatei mit App-Kennung und Gerätekennung. Andere Geräte mit Zugriff auf diesen Ordner lesen diese Daten und zeigen sie an. Mit einer Spiegelung („Bibliothek mit Spiegelung“) legt die App zusätzlich eine lesbare Kopie der abgelegten PDFs in einem von dir gewählten Ordner an. Übertragung und Speicherung übernimmt der Anbieter des Ordners (z. B. Apple bei iCloud Drive) nach seinen Bedingungen; der Entwickler erhält dabei nichts. Der Verlauf deiner Fragen wird nicht abgeglichen.</p>
+      <h3>Eigener Modellserver (optional)</h3>
+      <p>In den Einstellungen kannst du einen eigenen Server in deinem lokalen Netzwerk anbinden (LM Studio, Ollama oder ein OpenAI-kompatibler Server); angenommen werden nur Adressen im lokalen Netz. Vor der Aktivierung sendet die App nur feste Testanfragen ohne Dokumentdaten; ein optionaler API-Schlüssel liegt im Schlüsselbund dieses Geräts. Bestätigst du den Server mit „Übernehmen“, sendet ArchiveSorter für die Verarbeitung Seitenbilder, erkannte Texte und deine Fragen an diesen Server. Was dort damit geschieht, bestimmt der Betreiber des Servers; der Entwickler erhält nichts.</p>
+      <h3>Nur lokal auf diesem Gerät</h3>
+      <p>Im privaten App-Container bleiben Einstellungen, der Suchindex und Vorschaubilder. Modellpakete liegen in Apples verwaltetem, schreibgeschütztem Asset-Speicher. Für die Systemsuche (Spotlight) werden Typ, Aussteller, Datum, Ordner, Zusammenfassung und Schlagwörter abgelegter Dokumente im Suchindex dieses Geräts geführt; Seitentext wird dort nicht hinterlegt.</p>
+      <h3>Löschung</h3>
+      <p>Der Papierkorb behält Metadaten und Suchstatus für eine Wiederherstellung. Dauerhaftes Löschen entfernt die abgelegte Kopie, das Original, den erkannten Text und die Indexeinträge; eine Löschmarkierung bleibt im privaten App-Speicher, damit ein Backup dieses Geräts das Dokument nicht ungewollt wiederherstellt.</p>
+      <h3>Kontakt</h3>
+      <p>Sebastian Schreck<br><a href="mailto:developer.schreck@icloud.com">developer.schreck@icloud.com</a><br>Nürtinger Straße 52, 71032 Böblingen</p>
+    </section>
+
+    <h2 id="v1-de">Version 1.0</h2>
+    <div class="meta">ArchiveSorter &middot; Zuletzt aktualisiert: 26. August 2026</div>
+
+    <div class="highlight">
+      <strong>Kurzfassung:</strong> Der Entwickler betreibt kein Backend und
+      erhebt weder Ihre Dokumente und erkannten Texte noch Ihre App-Nutzung.
+      OCR und KI-Inferenz der ausgelieferten App laufen auf Ihrem Ger&auml;t. Wenn
+      Sie einen Ordner eines File Providers ausw&auml;hlen, kann dieser Anbieter die
+      unten beschriebenen gemeinsamen Bibliotheksdaten nach seinen eigenen
+      Bedingungen hochladen und synchronisieren.
+    </div>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>ArchiveSorter wird entwickelt und betrieben von:</p>
+    <p>
+      Sebastian Schreck<br>
+      Nürtinger Straße 52<br>
+      71032 Böblingen<br>
+      Deutschland<br>
+      Telefon: <a href="tel:+491623853102">+49 162 3853102</a><br>
+      E-Mail: <a href="mailto:developer.schreck@icloud.com">developer.schreck@icloud.com</a>
+    </p>
+
+    <h2>2. Datenerhebung durch den Entwickler</h2>
+    <p>
+      <strong>Keine durch den Entwickler.</strong> ArchiveSorter erhebt, protokolliert,
+      &uuml;bermittelt oder speichert keinerlei personenbezogene Daten,
+      Nutzungsdaten, Analysedaten, Absturzberichte, Werbe-IDs oder
+      Ger&auml;tekennungen auf Servern des Entwicklers.
+    </p>
+    <p>Der Entwickler betreibt keinen Backend-Dienst f&uuml;r diese App.</p>
+
+    <h2>3. Verarbeitung auf dem Ger&auml;t</h2>
+    <p>
+      OvisOCR2 transkribiert vollst&auml;ndige Dokumentseiten. Anschlie&szlig;end
+      verarbeitet Qwen3.5 4B den vollst&auml;ndigen erkannten Text f&uuml;r
+      Klassifizierung, Zusammenfassungen, Ablage und dokumentbasierte Antworten.
+      OCR und KI-Inferenz laufen in der ausgelieferten App &uuml;ber native
+      MLX-Modelle auf Ihrem Ger&auml;t. Apple Foundation Models wird nur dort lokal
+      verwendet, wo Funktion und Kontext dies erlauben.
+    </p>
+    <p>
+      Der Entwickler erh&auml;lt weder Ihre Dokumente noch erkannte Texte. Speicherung
+      und Synchronisierung durch einen von Ihnen ausgew&auml;hlten File Provider
+      werden nachfolgend getrennt beschrieben.
+    </p>
+
+    <h2>4. Modelldownloads und selbst gew&auml;hlte File Provider</h2>
+    <p><strong>4.1 Hugging-Face-Modelldownloads</strong></p>
+    <p>
+      Nachdem Sie die Downloads ausdr&uuml;cklich starten, l&auml;dt ArchiveSorter die
+      Gewichte und erforderlichen Begleitdateien f&uuml;r OvisOCR2 und Qwen3.5 vom
+      Hugging Face Hub (<a href="https://huggingface.co">huggingface.co</a>).
+      Die App f&uuml;gt diesen Anfragen weder Dokumentinhalte noch Analysedaten zur
+      App-Nutzung hinzu. &Uuml;bliche Netzwerk-Metadaten wie Ihre IP-Adresse und
+      HTTP-Header werden zur Auslieferung verarbeitet. Daf&uuml;r gelten die
+      Datenschutz- und Aufbewahrungsbedingungen von Hugging Face und den
+      beteiligten Netzbetreibern.
+    </p>
+    <p><strong>4.2 Bibliotheksordner eines File Providers</strong></p>
+    <p>
+      Wenn Sie einen Ordner von iCloud Drive, Dropbox, OneDrive, Google Drive
+      oder einem anderen File Provider ausw&auml;hlen, kann dieser Anbieter Folgendes
+      hochladen und synchronisieren:
+    </p>
+    <ul>
+      <li>Dokumentdateien und exakte Original-Backups;</li>
+      <li>vollst&auml;ndige OCR-Texte in Klartext-Sidecars;</li>
+      <li>zeitweise Input-, Verarbeitungs- und L&ouml;sch-Staging-Dateien; und</li>
+      <li>checksum-gesch&uuml;tzte Wiederherstellungs- und Synchronisierungsdatens&auml;tze.</li>
+    </ul>
+    <p>
+      Wiederherstellungsdatens&auml;tze k&ouml;nnen Dateinamen und relative Pfade,
+      Klassifizierung und Organisation, Dokumentdaten, -typen und -arten,
+      Versicherungs-, Finanz- und Empf&auml;ngerfelder, Tags, Pr&uuml;f-, Papierkorb- und
+      Verarbeitungsstatus, erzeugte Zusammenfassungen, Themen, Aktionen,
+      Entit&auml;ten und Textausschnitte, Hashes, Zeitstempel und Dateinachweise sowie
+      unver&auml;nderliche Versionshistorien, Transaktionsjournale und
+      L&ouml;sch-Tombstones enthalten. Es gelten die Datenschutz-, Aufbewahrungs-,
+      Papierkorb- und Versionsregeln des ausgew&auml;hlten Anbieters. Diese
+      Anbietersynchronisierung ist keine Erhebung durch den Entwickler.
+    </p>
+
+    <h2>5. Berechtigungen der App</h2>
+    <ul>
+      <li><strong>Kamera</strong> &mdash; nur beim Scannen eines Dokuments
+        mit dem integrierten Dokumentenscanner. Aufgenommene Bilder
+        werden auf dem Ger&auml;t verarbeitet und ausschlie&szlig;lich in dem von
+        Ihnen gew&auml;hlten Bibliotheksordner gespeichert.</li>
+      <li><strong>Face ID / Touch ID</strong> &mdash; nur zum Entsperren
+        der App, falls Sie die App-Sperre aktivieren. Biometrische Daten
+        werden von iOS verwaltet und sind weder f&uuml;r die App noch f&uuml;r
+        den Entwickler einsehbar.</li>
+      <li><strong>Dateizugriff</strong> &mdash; die App liest und schreibt
+        den explizit gew&auml;hlten Bibliotheksordner und von Ihnen importierte oder
+        geteilte Dateien.</li>
+    </ul>
+
+    <h2>6. Datenspeicherung und L&ouml;schung</h2>
+    <p>
+      Ger&auml;telokale Daten bleiben im privaten App-Container jedes Ger&auml;ts. Die
+      laufende SwiftData-Datenbank, FTS-/AgenticSearch-Datenbank, Such-Chunks und
+      Embeddings, Vorschaubilder, Konfliktkopien sowie Datenbank-Snapshots f&uuml;r
+      Updates oder Wiederherstellung liegen in Application Support;
+      heruntergeladene Modellartefakte liegen in Caches; Einstellungen liegen in
+      UserDefaults/Preferences. Ein &auml;lterer .database-Ordner in einer Bibliothek
+      kann nur als kalte &Uuml;bergabekopie bestehen; er ist nicht der laufende Index.
+    </p>
+    <p>
+      Weiches L&ouml;schen beh&auml;lt Metadaten und Suchstatus f&uuml;r eine
+      Wiederherstellung. Dauerhaftes L&ouml;schen entfernt die von der App verwaltete
+      Dokumentkopie, das passende Original-Backup, das Klartext-OCR-Sidecar sowie
+      die lokale Datenbankprojektion. Die App versucht au&szlig;erdem nach bestem
+      Bem&uuml;hen, die passenden ger&auml;telokalen Vorschaubild-Cacheeintr&auml;ge zu
+      bereinigen; ein Cache-I/O-Fehler schw&auml;cht die best&auml;tigte L&ouml;schung der
+      Kerndaten und Projektion nicht. Wiederherstellungsmanifest,
+      unver&auml;nderliche Versionshistorie, Transaktionsjournale und L&ouml;sch-Tombstone
+      bleiben in der ausgew&auml;hlten Bibliothek, damit ein anderes Ger&auml;t das
+      Dokument nicht wiederherstellt. Ein File Provider kann eigene Kopien nach
+      seinen Aufbewahrungs-, Papierkorb- oder Versionsregeln behalten. Das
+      L&ouml;schen der App entfernt ihren lokalen Container, nicht automatisch eine
+      Bibliothek beim File Provider.
+    </p>
+
+    <h2>7. Datenschutz f&uuml;r Kinder</h2>
+    <p>
+      ArchiveSorter richtet sich nicht an Kinder unter 13 Jahren. Der Entwickler
+      erhebt wissentlich weder Daten von Kindern noch von anderen Nutzern. Ein
+      ausgew&auml;hlter File Provider verarbeitet die oben beschriebenen gemeinsamen
+      Bibliotheksdaten nach seinen eigenen Bedingungen.
+    </p>
+
+    <h2>8. Drittanbieter-Dienste</h2>
+    <p>
+      Die App enth&auml;lt keine Analyse-, Werbe-, Absturzmelde- oder
+      Tracking-SDKs von Drittanbietern. Hugging Face wird nur nach dem Start
+      eines Modelldownloads kontaktiert. Ein File Provider ist nur beteiligt,
+      wenn Sie einen von ihm bereitgestellten Ordner ausw&auml;hlen.
+    </p>
+
+    <h2>9. Ihre Rechte</h2>
+    <p>
+      Da der Entwickler keine personenbezogenen Daten &uuml;ber Sie erhebt
+      oder speichert, gibt es keine personenbezogenen Daten, auf die
+      zugegriffen, die berichtigt, gel&ouml;scht oder &uuml;bertragen werden
+      k&ouml;nnten. Sie behalten die Kontrolle &uuml;ber die Daten in der App, ihren
+      lokalen Containern und Ihrer gew&auml;hlten Bibliothek oder Ihrem
+      Speicheranbieter, vorbehaltlich dessen Aufbewahrungs- und Versionsregeln.
+    </p>
+
+    <h2>10. &Auml;nderungen dieser Erkl&auml;rung</h2>
+    <p>
+      Bei &Auml;nderungen dieser Datenschutzerkl&auml;rung wird das Datum
+      &bdquo;Zuletzt aktualisiert&ldquo; oben auf dieser Seite angepasst.
+      Bitte pr&uuml;fen Sie diese Seite gelegentlich.
+    </p>
+
+    <h2>11. Kontakt</h2>
+    <p>
+      Bei Fragen zu dieser Datenschutzerkl&auml;rung oder den
+      Datenschutzpraktiken der App wenden Sie sich bitte an:
+    </p>
+    <p>
+      Sebastian Schreck<br>
+      Nürtinger Straße 52<br>
+      71032 Böblingen<br>
+      Deutschland<br>
+      Telefon: <a href="tel:+491623853102">+49 162 3853102</a><br>
+      E-Mail: <a href="mailto:developer.schreck@icloud.com">developer.schreck@icloud.com</a>
+    </p>
+
+    <p style="margin-top: 1.5rem;">
+      <a href="../archivesorter-support-v2/index.html?lang=de">Support &amp; FAQ</a>
+    </p>
+  </div>
+
+  <!-- ==================== FRANCAIS ==================== -->
+  <div class="lang" id="lang-fr">
+    <h1>Politique de confidentialit&eacute;</h1>
+    <section aria-labelledby="v2-fr">
+      <h2 id="v2-fr">Version 2.0 et versions ultérieures</h2>
+      <h3>Aucune collecte par le développeur</h3>
+      <p>Le développeur n'exploite aucun serveur pour ArchiveSorter et ne reçoit ni documents, ni textes reconnus, ni données d'utilisation. Aucun compte n'est requis. L'app ne contient ni publicité, ni analyse d'usage, ni suivi.</p>
+      <h3>Traitement sur votre appareil</h3>
+      <p>La reconnaissance de texte (OvisOCR2), le classement, les résumés et les réponses fondées sur les documents (Qwen 3.5 4B) s'exécutent entièrement sur votre appareil. Les documents, les textes reconnus et les questions ne quittent pas l'appareil pour cela – sauf si vous connectez explicitement votre propre serveur de modèles (voir ci-dessous).</p>
+      <p>Les modèles sur l’appareil nécessitent un iPhone ou un iPad doté d’au moins 6 Go de mémoire vive. La version 2.0 n’utilise pas Apple Foundation Models. Si un document compte plus de cinq pages, l’app ne le fait ni lire ni classer par l’IA. Vous choisissez vous-même son dossier. Cette limite vaut également pour votre propre serveur de modèles.</p>
+      <h3>Téléchargement des modèles</h3>
+      <p>Ce n'est qu'après votre action explicite qu'Apple fournit les paquets de modèles immuables OvisOCR2 et Qwen 3.5 4B sous forme de Background Assets hébergés par Apple. Seuls les poids des modèles, les tokenizers, les configurations et les fichiers de licence et d'attribution sont téléchargés ; aucun document ni texte n'est transmis. Les règles de confidentialité d'Apple et les conditions de votre opérateur s'appliquent aux métadonnées réseau du téléchargement.</p>
+      <h3>Bibliothèque de l'appareil</h3>
+      <p>Une bibliothèque de l'appareil se trouve dans le dossier que vous choisissez sur cet appareil ou sur un disque connecté. Le dossier contient les documents classés au format PDF, les originaux inchangés et les textes reconnus. La base de métadonnées (type, dossier, émetteur, date, montants, mots-clés, résumés, affectation aux personnes du foyer), les journaux de traitement et de modification ainsi que les marqueurs de suppression et l'historique de vos questions résident dans l'espace privé de l'app sur cet appareil ; le dossier seul n'est donc pas une sauvegarde complète – utilisez pour cela la fonction de sauvegarde des réglages ; une sauvegarde contient aussi l'historique de vos questions. L'app crée les sauvegardes et les exports dans le dossier que vous choisissez à cet effet ; si ce dossier se trouve dans un dossier cloud, les règles de ce fournisseur s'appliquent ; ce n'est pas une collecte par le développeur.</p>
+      <h3>Bibliothèque cloud (synchronisation entre vos appareils)</h3>
+      <p>Si vous choisissez un dossier dans iCloud Drive, chez un autre fournisseur intégré via le système ou sur un partage réseau, ArchiveSorter y crée une bibliothèque cloud ou rejoint une bibliothèque existante. Chaque appareil conserve sa propre copie de travail privée et écrit dans le dossier choisi : des fichiers de modifications contenant les métadonnées des documents (type, dossier, émetteur, date, montants, mots-clés, résumés, affectation aux personnes du foyer, nom de fichier et chemin de classement, état corbeille et suppression), les originaux, les PDF classés, les textes reconnus, de petits aperçus de la première page, des textes de documents préparés pour « Questions », les catégories, les noms des personnes de votre foyer, le nom d'appareil que vous avez choisi, une copie de la base de la bibliothèque ainsi qu'un fichier de verrou contenant l'identifiant de l'app et un identifiant d'appareil. Les autres appareils ayant accès à ce dossier lisent et affichent ces données. Avec un miroir (« Bibliothèque avec miroir »), l'app conserve en plus une copie lisible des PDF classés dans un dossier que vous choisissez. Le transfert et le stockage sont assurés par le fournisseur du dossier (par exemple Apple pour iCloud Drive) selon ses conditions ; le développeur ne reçoit rien. L'historique de vos questions n'est pas synchronisé.</p>
+      <h3>Votre propre serveur de modèles (facultatif)</h3>
+      <p>Dans les réglages, vous pouvez connecter votre propre serveur sur votre réseau local (LM Studio, Ollama ou un serveur compatible OpenAI) ; seules les adresses du réseau local sont acceptées. Avant l'activation, l'app n'envoie que des requêtes de test fixes sans données de documents ; une clé d'API facultative est conservée dans le trousseau de cet appareil. Dès que vous confirmez le serveur avec « Utiliser ces modèles », ArchiveSorter envoie à ce serveur les images des pages, les textes reconnus et vos questions pour le traitement. Ce qu'il en advient relève de l'exploitant du serveur ; le développeur ne reçoit rien.</p>
+      <h3>Uniquement local sur cet appareil</h3>
+      <p>Le conteneur privé de l'app conserve les réglages, l'index de recherche et les aperçus. Les paquets de modèles résident dans le stockage d'assets géré par Apple, en lecture seule. Pour la recherche système (Spotlight), le type, l'émetteur, la date, le dossier, le résumé et les mots-clés des documents classés sont conservés dans l'index de recherche de cet appareil ; le texte des pages n'y est pas stocké.</p>
+      <h3>Suppression</h3>
+      <p>La corbeille conserve les métadonnées et l'état de recherche en vue d'une restauration. La suppression définitive retire la copie classée, l'original, le texte reconnu et les entrées d'index ; un marqueur de suppression reste dans l'espace privé de l'app afin qu'une sauvegarde de cet appareil ne restaure pas le document involontairement.</p>
+      <h3>Contact</h3>
+      <p>Sebastian Schreck<br><a href="mailto:developer.schreck@icloud.com">developer.schreck@icloud.com</a><br>Nürtinger Straße 52, 71032 Böblingen, Allemagne</p>
+    </section>
+
+    <h2 id="v1-fr">Version 1.0</h2>
+    <div class="meta">ArchiveSorter &middot; Derni&egrave;re mise &agrave; jour : 26 ao&ucirc;t 2026</div>
+
+    <div class="highlight">
+      <strong>En bref :</strong> Le D&eacute;veloppeur n&rsquo;exploite aucun backend et ne
+      collecte ni vos documents et textes reconnus, ni votre utilisation de
+      l&rsquo;app. L&rsquo;OCR et l&rsquo;inf&eacute;rence d&rsquo;IA de l&rsquo;app distribu&eacute;e s&rsquo;ex&eacute;cutent sur
+      votre appareil. Si vous choisissez le dossier d&rsquo;un fournisseur de
+      fichiers, celui-ci peut t&eacute;l&eacute;verser et synchroniser les donn&eacute;es partag&eacute;es
+      de la biblioth&egrave;que d&eacute;crites ci-dessous selon ses propres conditions.
+    </div>
+
+    <h2>1. Qui sommes-nous</h2>
+    <p>ArchiveSorter est d&eacute;velopp&eacute; et maintenu par :</p>
+    <p>
+      Sebastian Schreck<br>
+      Nürtinger Straße 52<br>
+      71032 Böblingen<br>
+      Allemagne<br>
+      T&eacute;l&eacute;phone : <a href="tel:+491623853102">+49 162 3853102</a><br>
+      E-mail : <a href="mailto:developer.schreck@icloud.com">developer.schreck@icloud.com</a>
+    </p>
+
+    <h2>2. Donn&eacute;es collect&eacute;es par le D&eacute;veloppeur</h2>
+    <p>
+      <strong>Aucune par le D&eacute;veloppeur.</strong> ArchiveSorter ne collecte, n&rsquo;enregistre,
+      ne transmet ni ne stocke aucune donn&eacute;e personnelle, donn&eacute;e
+      d&rsquo;utilisation, donn&eacute;e analytique, rapport de plantage,
+      identifiant publicitaire ou identifiant d&rsquo;appareil sur un
+      serveur exploit&eacute; par le D&eacute;veloppeur.
+    </p>
+    <p>Le D&eacute;veloppeur n&rsquo;exploite aucun service backend pour cette application.</p>
+
+    <h2>3. Traitement sur l&rsquo;appareil</h2>
+    <p>
+      OvisOCR2 transcrit les pages compl&egrave;tes des documents. Qwen3.5 4B traite
+      ensuite tout le texte reconnu pour le classement, les r&eacute;sum&eacute;s, le rangement
+      et les r&eacute;ponses fond&eacute;es sur les documents. Dans l&rsquo;app distribu&eacute;e, l&rsquo;OCR et
+      l&rsquo;inf&eacute;rence d&rsquo;IA s&rsquo;ex&eacute;cutent sur votre appareil avec des mod&egrave;les MLX
+      natifs. Apple Foundation Models n&rsquo;est utilis&eacute; localement que lorsque la
+      fonction et le contexte le permettent.
+    </p>
+    <p>
+      Le D&eacute;veloppeur ne re&ccedil;oit ni vos documents ni les textes reconnus. Le
+      stockage et la synchronisation par un fournisseur de fichiers que vous
+      choisissez sont d&eacute;crits s&eacute;par&eacute;ment ci-dessous.
+    </p>
+
+    <h2>4. T&eacute;l&eacute;chargements de mod&egrave;les et fournisseurs de fichiers choisis</h2>
+    <p><strong>4.1 T&eacute;l&eacute;chargements de mod&egrave;les Hugging Face</strong></p>
+    <p>
+      Apr&egrave;s votre lancement explicite des t&eacute;l&eacute;chargements, ArchiveSorter r&eacute;cup&egrave;re
+      depuis Hugging Face Hub
+      (<a href="https://huggingface.co">huggingface.co</a>) les poids et fichiers
+      d&rsquo;accompagnement requis pour OvisOCR2 et Qwen3.5. L&rsquo;app n&rsquo;ajoute &agrave; ces
+      requ&ecirc;tes ni contenu documentaire ni donn&eacute;es d&rsquo;analyse de l&rsquo;utilisation.
+      Les m&eacute;tadonn&eacute;es r&eacute;seau habituelles, telles que l&rsquo;adresse IP et les
+      en-t&ecirc;tes HTTP, sont trait&eacute;es pour fournir les fichiers. Les conditions de
+      confidentialit&eacute; et de conservation de Hugging Face et des op&eacute;rateurs
+      r&eacute;seau s&rsquo;appliquent &agrave; ces m&eacute;tadonn&eacute;es.
+    </p>
+    <p><strong>4.2 Dossiers de biblioth&egrave;que d&rsquo;un fournisseur de fichiers</strong></p>
+    <p>
+      Si vous choisissez un dossier fourni par iCloud Drive, Dropbox, OneDrive,
+      Google Drive ou un autre fournisseur de fichiers, celui-ci peut t&eacute;l&eacute;verser
+      et synchroniser&nbsp;:
+    </p>
+    <ul>
+      <li>les fichiers de documents et les sauvegardes originales exactes&nbsp;;</li>
+      <li>le texte OCR complet dans des fichiers annexes en clair&nbsp;;</li>
+      <li>des fichiers temporaires d&rsquo;entr&eacute;e, de traitement et de pr&eacute;paration de suppression&nbsp;; et</li>
+      <li>des enregistrements de r&eacute;cup&eacute;ration et de synchronisation prot&eacute;g&eacute;s par somme de contr&ocirc;le.</li>
+    </ul>
+    <p>
+      Les enregistrements de r&eacute;cup&eacute;ration peuvent contenir des noms de fichiers
+      et chemins relatifs, le classement et l&rsquo;organisation, les dates, types et
+      genres de documents, des champs d&rsquo;assurance, financiers et de destinataire,
+      des &eacute;tiquettes, les &eacute;tats de v&eacute;rification, corbeille et traitement, des
+      r&eacute;sum&eacute;s, sujets, actions, entit&eacute;s et extraits g&eacute;n&eacute;r&eacute;s, des empreintes,
+      horodatages et preuves de fichiers, ainsi que l&rsquo;historique immuable des
+      r&eacute;visions, les journaux de transactions et les marqueurs de suppression.
+      Les r&egrave;gles de confidentialit&eacute;, conservation, &eacute;l&eacute;ments r&eacute;cemment supprim&eacute;s
+      et versions de fichiers du fournisseur choisi s&rsquo;appliquent. Cette
+      synchronisation n&rsquo;est pas une collecte par le D&eacute;veloppeur.
+    </p>
+
+    <h2>5. Autorisations demand&eacute;es par l&rsquo;application</h2>
+    <ul>
+      <li><strong>Cam&eacute;ra</strong> &mdash; uniquement lors de la num&eacute;risation
+        d&rsquo;un document avec le scanner int&eacute;gr&eacute;. Les images captur&eacute;es
+        sont trait&eacute;es sur l&rsquo;appareil et stock&eacute;es uniquement dans le
+        dossier que vous avez s&eacute;lectionn&eacute; comme biblioth&egrave;que.</li>
+      <li><strong>Face ID / Touch ID</strong> &mdash; uniquement pour
+        d&eacute;verrouiller l&rsquo;application si vous activez le verrouillage.
+        Les donn&eacute;es biom&eacute;triques sont g&eacute;r&eacute;es par iOS et ne sont
+        jamais accessibles &agrave; l&rsquo;application ou au D&eacute;veloppeur.</li>
+      <li><strong>Acc&egrave;s aux fichiers</strong> &mdash; l&rsquo;application lit et
+        &eacute;crit le dossier de biblioth&egrave;que explicitement s&eacute;lectionn&eacute; et les
+        fichiers que vous importez ou partagez.</li>
+    </ul>
+
+    <h2>6. Stockage et suppression</h2>
+    <p>
+      Les donn&eacute;es locales restent dans le conteneur priv&eacute; de l&rsquo;app sur chaque
+      appareil. La base SwiftData active, la base FTS/AgenticSearch, les segments
+      et embeddings de recherche, les vignettes, les copies de conflits et les
+      instantan&eacute;s de base pour mise &agrave; jour ou r&eacute;cup&eacute;ration r&eacute;sident dans
+      Application Support&nbsp;; les artefacts de mod&egrave;les t&eacute;l&eacute;charg&eacute;s r&eacute;sident dans
+      Caches&nbsp;; les pr&eacute;f&eacute;rences et r&eacute;glages r&eacute;sident dans UserDefaults/Preferences.
+      Un ancien dossier .database dans une biblioth&egrave;que peut subsister uniquement
+      comme copie de transfert &agrave; froid&nbsp;; il ne constitue pas l&rsquo;index actif.
+    </p>
+    <p>
+      La suppression r&eacute;versible conserve les m&eacute;tadonn&eacute;es et l&rsquo;&eacute;tat de recherche.
+      La suppression d&eacute;finitive retire la copie du document g&eacute;r&eacute;e par l&rsquo;app, la
+      sauvegarde originale correspondante, le fichier annexe OCR en clair et la
+      projection locale de la base de donn&eacute;es. L&rsquo;app tente aussi, dans la mesure
+      du possible, de nettoyer les entr&eacute;es correspondantes du cache local de
+      vignettes&nbsp;; un &eacute;chec d&rsquo;E/S du cache ne remet pas en cause la suppression
+      valid&eacute;e des donn&eacute;es principales et de la projection. Le manifeste de
+      r&eacute;cup&eacute;ration, l&rsquo;historique immuable des r&eacute;visions, les journaux de
+      transactions et le marqueur de suppression restent dans la biblioth&egrave;que
+      choisie afin qu&rsquo;un autre appareil ne restaure pas le document. Un fournisseur
+      de fichiers peut conserver ses propres copies selon ses r&egrave;gles de
+      conservation, corbeille ou versions. La suppression de l&rsquo;app retire son
+      conteneur local, mais pas automatiquement une biblioth&egrave;que d&eacute;tenue par un
+      fournisseur.
+    </p>
+
+    <h2>7. Protection des mineurs</h2>
+    <p>
+      ArchiveSorter ne s&rsquo;adresse pas aux enfants de moins de 13 ans. Le
+      D&eacute;veloppeur ne collecte sciemment aucune donn&eacute;e d&rsquo;enfants ni d&rsquo;autres
+      utilisateurs. Un fournisseur de fichiers choisi traite les donn&eacute;es
+      partag&eacute;es de la biblioth&egrave;que d&eacute;crites ci-dessus selon ses propres conditions.
+    </p>
+
+    <h2>8. Services tiers</h2>
+    <p>
+      L&rsquo;application n&rsquo;int&egrave;gre aucun SDK d&rsquo;analyse, de publicit&eacute;,
+      de rapport de plantage ou de suivi tiers. Hugging Face n&rsquo;est contact&eacute;
+      qu&rsquo;apr&egrave;s le lancement d&rsquo;un t&eacute;l&eacute;chargement. Un fournisseur de fichiers
+      n&rsquo;intervient que lorsque vous choisissez l&rsquo;un de ses dossiers.
+    </p>
+
+    <h2>9. Vos droits</h2>
+    <p>
+      &Eacute;tant donn&eacute; que le D&eacute;veloppeur ne collecte ni ne stocke aucune
+      donn&eacute;e personnelle vous concernant, il n&rsquo;existe aucune donn&eacute;e
+      personnelle &agrave; consulter, rectifier, supprimer ou transf&eacute;rer.
+      Vous gardez le contr&ocirc;le des donn&eacute;es dans l&rsquo;app, ses conteneurs locaux et
+      votre biblioth&egrave;que ou fournisseur de stockage choisi, sous r&eacute;serve des
+      r&egrave;gles de conservation et de versions de ce fournisseur.
+    </p>
+
+    <h2>10. Modifications de cette politique</h2>
+    <p>
+      En cas de modification de cette politique, la date
+      &laquo; Derni&egrave;re mise &agrave; jour &raquo; en haut de cette page sera
+      actualis&eacute;e. Veuillez v&eacute;rifier cette page occasionnellement.
+    </p>
+
+    <h2>11. Contact</h2>
+    <p>
+      Pour toute question concernant cette politique de confidentialit&eacute;
+      ou les pratiques de confidentialit&eacute; de l&rsquo;application,
+      veuillez contacter :
+    </p>
+    <p>
+      Sebastian Schreck<br>
+      Nürtinger Straße 52<br>
+      71032 Böblingen<br>
+      Allemagne<br>
+      T&eacute;l&eacute;phone : <a href="tel:+491623853102">+49 162 3853102</a><br>
+      E-mail : <a href="mailto:developer.schreck@icloud.com">developer.schreck@icloud.com</a>
+    </p>
+
+    <p style="margin-top: 1.5rem;">
+      <a href="../archivesorter-support-v2/index.html?lang=fr">Support &amp; FAQ</a>
+    </p>
+  </div>
+
+  <footer>
+    &copy; 2026 Sebastian Schreck. All rights reserved.
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.lang').forEach(function(el) { el.classList.remove('active'); });
+      document.querySelectorAll('.lang-switch button').forEach(function(el) { el.classList.remove('active'); });
+      document.getElementById('lang-' + lang).classList.add('active');
+      document.getElementById('btn-' + lang).classList.add('active');
+      document.documentElement.lang = lang;
+    }
+
+    const requestedLanguage = new URLSearchParams(window.location.search).get('lang');
+    if (['de', 'en', 'fr'].includes(requestedLanguage)) {
+      setLang(requestedLanguage);
+    }
+  </script>
+
+</body>
+</html>
